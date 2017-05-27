@@ -40,3 +40,17 @@ assert.deepEqual(
   ['a', 'b'],
   'ignores comment lines'
 )
+
+assert.deepEqual(
+  parse([
+    'x:',
+    ' - a',
+    ' - b',
+    'y: c'
+  ].join('\n')),
+  {
+    x: ['a', 'b'],
+    y: 'c'
+  }
+)
+
